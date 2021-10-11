@@ -1,4 +1,4 @@
-## Graph DNA
+# Graph DNA
 
 An implementation of an alternative embedding algorithm for graph data.
 Based on the paper [Graph DNA: Deep Neighborhood Aware Graph Encoding for Collaborative Filtering](https://arxiv.org/pdf/1905.12217.pdf) (Liwei Wu et. al)
