@@ -27,6 +27,6 @@ Graph Convolutional Networks are extremely powerful tools in biology, social net
 drug interaction prediction, and advanced reccomendation systems. 
 
 Demonstrating more time and memory efficient methods for creating graph embeddings is essential in pushing forward these advancments,
-and making graph data more easily consumed by graph neural networks. 
+and making graph data more easily consumed by neural networks. 
 
 
