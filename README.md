@@ -32,3 +32,20 @@ Demonstrating more time and memory efficient methods for creating graph embeddin
 and making graph data more easily consumed by neural networks. 
 
 
+### Examples
+
+As seen in `examples.py` we can recreate the graph on page 5, and generate its DNA encoding as follows:
+  
+  ```
+  figure_1 = Graph(5, [[0,1], [1,2], [2,3], [2,4]])
+  print(figure_1.generate_dna_encoding(depth=2, filter_capacity=3))
+  
+  >>> [[1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1], 
+       [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1], 
+       [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1], 
+       [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1], 
+       [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1]]
+  ```
+  
+The output is the generated embedding for each vertex. We can see that vertices 3,4 and 1,2 respectively get the same embeddings with d=2 just as depicted in Figure 1 in the paper.
+
