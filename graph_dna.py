@@ -1,5 +1,4 @@
 from pybloom_live import BloomFilter
-from math import log
 
 class Graph:
     def __init__(self, num_vertices, edges):
