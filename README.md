@@ -14,7 +14,7 @@ The goal of Graph DNA is to create a memory and time efficient way to embed grap
   <sub><sup>(https://arxiv.org/pdf/1905.12217.pdf, Liwei Wu et. al)</sup></sub>
 </p>
 
-Existing methods localize vertices with message passing using adjacency matrix multiplication, but have trouble gathering structural insight
+Existing methods localize vertices with message passing using adjacency matrix multiplication + loss function minimization, but have trouble gathering structural insight
 from graphs beyond 1-2 hops without pushing exponential time and space limits. 
 
 <p align="center">
