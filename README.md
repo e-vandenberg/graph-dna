@@ -47,5 +47,5 @@ As seen in `examples.py` we can recreate the graph on page 5, and generate its D
        [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1]]
   ```
   
-The output is the generated embedding for each vertex. We can see that vertices 3,4 and 1,2 respectively get the same embeddings with d=2 just as depicted in Figure 1 in the paper.
+The output is the generated embedding for each vertex. We can see that vertices 3,4 and 1,2 respectively get the same embeddings with d=2 just as depicted in Figure 1 in [the paper](https://arxiv.org/pdf/1905.12217.pdf).
 
