@@ -1,10 +1,11 @@
 from pybloom_live import BloomFilter
+from math import log
 
 class Graph:
     def __init__(self, num_vertices, edges):
         self.edges = edges
         self.num_vertices = num_vertices
-        self.adjacency_matrix = self.generate_adjacency_matrix(edges)
+        self.neighbours = self.generate_neighbours(edges) # key vertex: value [neighobur1, neighbour2]
 
     def generate_adjacency_matrix(self, edges):
         A = [[0 for x in range(self.num_vertices)] for y in range(self.num_vertices)]
@@ -14,15 +15,23 @@ class Graph:
             A[edge[1]][edge[0]] = 1
         return A
 
-    def one_hop_neighbours(self, vertex):
-        neighbours = []
-        for i in range(self.num_vertices):
-            # the adjacency matrix holds exactly the information about
-            # one hop neighbours. All we need to do is extract
-            if self.adjacency_matrix[vertex][i] == 1:
-                neighbours.append(i)
-        return neighbours
+    def generate_neighbours(self, edges):
+        n = {}
+        for edge in edges:
+            if edge[0] in n:
+                n[edge[0]].append(edge[1])
+            else:
+                n[edge[0]] = [edge[1]]
 
+            # assume undirected graph, so adjacency matrix is symmetric
+            if edge[1] in n:
+                n[edge[1]].append(edge[0])
+            else:
+                n[edge[1]] = [edge[0]]
+        return n
+
+    def one_hop_neighbours(self, vertex):
+        return self.neighbours[vertex]
 
     def generate_dna_encoding(self, depth, filter_capacity):
         # initialize empty bloom filters for each depth
