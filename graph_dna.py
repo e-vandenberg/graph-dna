@@ -65,3 +65,22 @@ class Graph:
                     embedding[vertex][y] = 1
 
         return embedding
+
+    def generate_meta_graph(self, dna_encoding):
+        # here, we generate a new bipartite graph G', where each vertex v of G is adjacent
+        # to a corresponding meta-vertex if and only if the corresponding bit in the Bloom filter
+        # for v has been activated
+        num_vertices = len(dna_encoding)
+        num_meta_vertices = len(dna_encoding[0])
+
+        # initialize our meta graph G'
+        meta_graph = Graph(num_vertices + num_meta_vertices, [])
+
+        # then populate G' with edges based on dna_encoding
+        for i, vertex_encoding in enumerate(dna_encoding):
+            for j, activated in enumerate(vertex_encoding):
+                if activated:
+                    # add the adjacency to the corresponding meta-vertex
+                    meta_graph.edges.append([i, num_vertices + j])
+
+        return meta_graph
