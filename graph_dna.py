@@ -5,7 +5,7 @@ class Graph:
     def __init__(self, num_vertices, edges):
         self.edges = edges
         self.num_vertices = num_vertices
-        self.neighbours = self.generate_neighbours(edges) # key vertex: value [neighobur1, neighbour2]
+        self.neighbours = self.generate_neighbours(edges) # key vertex: value [neighobur1, neighbour2, . . .]
 
     def generate_adjacency_matrix(self, edges):
         A = [[0 for x in range(self.num_vertices)] for y in range(self.num_vertices)]
