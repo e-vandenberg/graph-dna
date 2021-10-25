@@ -46,7 +46,7 @@ class Graph:
         # essentially our message passing step
         # perform the step 'depth' times
         for d in range(1, depth + 1):
-            # for each vertex, aggregated its neighbours' bloom filters
+            # for each vertex, aggregate its neighbours' bloom filters
             for v in range(self.num_vertices):
                 # we also want to aggregate data from the vertex itself,
                 # so we add v to its neighbour set to include it in the union.
