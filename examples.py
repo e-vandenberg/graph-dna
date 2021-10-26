@@ -1,4 +1,4 @@
-from dna_graph import Graph
+from graph_dna import Graph
 
 # Figure 1 (page 5)
 figure_1 = Graph(5, [[0,1], [1,2], [2,3], [2,4]])
